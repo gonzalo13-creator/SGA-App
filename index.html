@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGA - Gestión de Almacenaje</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb"/>
+</head>
+<body>
+
+  <!-- Barra PC -->
+  <nav class="pc-nav">
+    <strong>SGA</strong>
+    <a href="#" onclick="abrirSeccion('STOCK')">Stock</a>
+    <a href="#" onclick="abrirSeccion('TABLERO')">Tablero</a>
+    <a href="#">Anotador</a>
+    <a href="#">Otros Almacenajes</a>
+    <a href="#">Elevador</a>
+    <a href="#">Admin</a>
+  </nav>
+
+  <!-- Menú Móvil -->
+  <div class="mobile-menu" id="mobile-menu">
+    <h2>Bienvenido a SGA</h2>
+    <a href="#" class="mobile-btn" style="background:#10B981; color:white;" onclick="abrirSeccion('STOCK')">📊 Stock</a>
+    <a href="#" class="mobile-btn" onclick="abrirSeccion('TABLERO')">🟩 Tablero</a>
+    <a href="#" class="mobile-btn">📝 Anotador</a>
+    <a href="#" class="mobile-btn">🛢️ Otros Almacenajes</a>
+    <a href="#" class="mobile-btn">🏗️ Elevador</a>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content" id="app-content">
+    <h2 id="titulo">Existencias en Planta (Stock)</h2>
+    
+    <!-- Panel de Stock -->
+    <div class="panel" id="panel-stock">
+      <div id="stock-data"></div>
+    </div>
+
+    <!-- Panel de Tablero -->
+    <div class="panel" id="panel-tablero" style="display: none; background: transparent; box-shadow: none; padding: 0;">
+      <div class="grid-container" id="tablero-data"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</body>
+</html>
