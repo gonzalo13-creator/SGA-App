@@ -1,0 +1,33 @@
+body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f3f4f6; color: #1f2937; }
+
+/* Barra de PC */
+.pc-nav { display: none; background: white; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); gap: 20px; align-items: center; }
+.pc-nav strong { font-size: 1.2rem; color: #2563eb; margin-right: 20px; }
+.pc-nav a { text-decoration: none; color: #4b5563; font-weight: bold; }
+.pc-nav a:hover { color: #2563eb; }
+
+/* Menú Móvil */
+.mobile-menu { display: flex; flex-direction: column; padding: 1rem; gap: 10px; }
+.mobile-btn { background: white; padding: 1.2rem; border-radius: 10px; text-align: center; font-weight: bold; text-decoration: none; color: #1f2937; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+/* Contenido general */
+.content { padding: 1rem; display: none; max-width: 1000px; margin: 0 auto; }
+.panel { background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+/* Lista de Stock */
+.stock-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-size: 1.1rem;}
+
+/* Tarjetas del Tablero */
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
+.card { padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; cursor: pointer; border: 2px solid transparent; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.card .id { font-size: 1.2rem; display: block; margin-bottom: 5px; color: #000; }
+.card .ton { font-size: 0.85rem; display: block; color: #000; }
+.card .cal { font-size: 0.7rem; display: block; color: #333; }
+.card.vacio { background: #e5e7eb !important; color: #9ca3af; border: 2px dashed #9ca3af; }
+
+/* Adaptación para Pantallas Grandes (PC) */
+@media (min-width: 768px) {
+  .pc-nav { display: flex; }
+  .mobile-menu { display: none !important; }
+  .content { display: block; }
+}
